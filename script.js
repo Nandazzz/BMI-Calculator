@@ -1,7 +1,7 @@
 function calculateBMI() {
   let weight = document.getElementById("weight-kg").value;
   let height = document.getElementById("height-cm").value;
-  let bmi = weight / (height * height);
+  let bmi = weight / Math.pow(height / 100, 2);
   let result = document.getElementById("result");
   if (bmi < 18.5) {
     result.textContent = `Your BMI is ${
@@ -20,4 +20,5 @@ function calculateBMI() {
       Math.round(bmi * 10) / 10
     } which means You are. Obesity`;
   }
+  return false;
 }
